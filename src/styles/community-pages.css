@@ -1,0 +1,51 @@
+.community-page { min-height: 100vh; padding: 69px 0 40px; background: #fff; color: #183c2d; font-family: Inter, Arial, sans-serif; }
+.community-banner { display: flex; align-items: flex-end; min-height: 330px; padding: 38px max(32px, calc((100vw - 1280px) / 2)); background-color: #073c2b; background-position: center; background-size: cover; color: #fff; }
+.community-banner--proyas { background-image: linear-gradient(90deg, rgba(3, 62, 43,.78), rgba(13,107,75,.22)), url('/proyas-community.jpg'); }
+.community-banner--blogs { background-image: linear-gradient(90deg, rgba(3, 62, 43,.78), rgba(13,107,75,.22)), url('/blogs-writing.jpg'); }
+.community-banner p { margin: 0 0 6px; color: #d8f3e4; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+.community-banner h1 { margin: 0; color: #fff; font: 600 clamp(36px,4vw,54px)/1.15 Lora, Georgia, serif; letter-spacing: -.025em; }
+.community-content { width: min(100% - 40px,1320px); margin: 0 auto; padding-top: 40px; display: grid; gap: 24px; }
+.community-card { padding: 22px 20px; border: 1px solid #c8ded2; border-radius: 13px; background: #fff; box-shadow: 0 1px 5px #183c2d29; }
+.community-card h2, .community-card h3 { margin: 0; font-size: 19px; font-weight: 600; line-height: 1.5; }
+.community-meta { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 13px; color: #0d6b4b; font-size: 14px; }
+.community-card-body { margin-top: 23px; padding-top: 18px; border-top: 1px solid #168a63; color: #546e62; font-size: 15px; line-height: 1.8; }
+.community-card-body p { margin: 0; }
+.community-card-body ul { margin: 0; padding-left: 22px; list-style: disc; }
+.community-card-body li::marker { color: #0d6b4b; }
+.community-focus { display: grid; gap: 24px; }
+.community-section-title { margin: 6px 0 0; font-size: 22px; font-weight: 600; }
+.community-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.community-card--with-image { display: grid; grid-template-columns: 190px minmax(0, 1fr); padding: 0; overflow: hidden; }
+.community-card-image { display: block; width: 100%; height: 100%; min-height: 190px; object-fit: cover; object-position: 30% center; }
+.community-card-content { padding: 22px 20px; min-width: 0; }
+.community-card-role { display: block; margin-bottom: 8px; color: #0d6b4b; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.student-org-banner .community-banner-image { object-position: 30% center; }
+@media (max-width: 680px) {
+  .community-banner { min-height: 240px; padding: 28px 22px; }
+  .community-content { width: calc(100% - 32px); padding-top: 28px; }
+  .community-card { padding: 20px 17px; }
+  .community-card h2, .community-card h3 { font-size: 17px; }
+  .community-card-body { font-size: 14px; }
+  .community-card-grid { grid-template-columns: 1fr; }
+  .community-card--with-image { grid-template-columns: 120px minmax(0, 1fr); }
+  .community-card-image { min-height: 100%; }
+  .community-card-content { padding: 20px 17px; }
+}
+
+.community-banner { position: relative; isolation: isolate; overflow: hidden; }
+.community-banner .community-banner-image,
+.research-image-banner .community-banner-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.community-banner::before,
+.research-image-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3, 62, 43,.72), rgba(13,107,75,.16)); z-index: -1; pointer-events: none; }
+.community-banner--proyas, .community-banner--blogs { background-image: none; }
+.research-theme .research-image-banner { isolation: isolate; min-height: 330px; display: flex; align-items: flex-end; padding: 38px 0; background: #073c2b; color: #fff; }
+.research-theme .research-image-banner::after { display: none; }
+.research-theme .research-image-banner .research-hero-content { width: min(100% - 64px, 1280px); max-width: 1280px; }
+.research-theme .research-image-banner h1 { font-size: clamp(36px,4vw,54px); }
+.research-theme .research-image-banner p,
+.research-theme .research-image-banner .research-kicker { color: #d8f3e4; }
+@media (max-width: 680px) {
+  .research-theme:has(.research-image-banner) { padding-top: 69px; }
+  .research-theme .research-image-banner { min-height: 240px; padding: 28px 0; }
+  .research-theme .research-image-banner .research-hero-content { width: calc(100% - 44px); }
+}

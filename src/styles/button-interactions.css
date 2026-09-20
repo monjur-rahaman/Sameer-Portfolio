@@ -1,0 +1,81 @@
+/* Shared keyboard feedback; component-specific inset outlines take precedence. */
+:where(#root) :where(button, a[href]):focus-visible {
+  outline: 3px solid #168a63;
+  outline-offset: 4px;
+}
+
+#root .site-nav__dropdown a:focus-visible {
+  outline-offset: -3px;
+}
+
+#root :is(button:disabled, button[aria-disabled='true']) {
+  cursor: not-allowed;
+}
+
+/* Complete the existing hover treatments with feedback while pressing. */
+#root :is(.site-search-button, .mobile-menu-button, .site-nav__toggle,
+  .search-back, .search-input-wrap button, .gallery-viewer-close):not(:disabled):not([aria-disabled='true']):active {
+  transform: scale(.96);
+  box-shadow: none;
+}
+
+#root .gallery-photo-open:active > span {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+#root .search-results a {
+  transition: background-color 200ms ease;
+}
+
+#root .search-results a:focus-visible {
+  background: #f0faf4;
+  outline-offset: -3px;
+}
+
+/* Touch/pen feedback is brief, immediate, and independent of sticky :hover. */
+#root [data-touch-feedback] {
+  filter: brightness(.92);
+  box-shadow: inset 0 0 0 2px rgba(22, 138, 99, .55), 0 4px 14px rgba(24, 60, 45, .18);
+  transition: none;
+}
+
+#root :is(.community-card, .samir-project-card, .samir-project-contact,
+  .home-work-card, .home-detail-card, .sp-paper, .research-item, .contact-card,
+  .home-contact-card, .contact-info, .award, .event)[data-touch-feedback] {
+  background-color: #f0faf4;
+  border-color: #168a63;
+  filter: none;
+}
+
+/* Retain color feedback without animated movement when motion is reduced. */
+@media (prefers-reduced-motion: reduce) {
+  #root :is(button, a[href], .gallery-photo-open > span) {
+    transition: none;
+  }
+
+  #root :is(.samir-home-intro__actions a, .home-work-tabs button,
+    .accordion-button, .home-social, .home-contact-button, .sp-tabs button,
+    .sp-read, .samir-project-contact a, .contact-email, .contact-social,
+    .contact-note a, .site-search-button, .search-back, .search-input-wrap button,
+    .gallery-viewer-close, .gallery-photo-open > span, .mobile-menu-button,
+    .site-nav__toggle) {
+    transform: none;
+  }
+
+  /* Keep caret/menu state indicators, but switch them instantly. */
+  #root :is(.site-nav__caret, .mobile-menu-button span, .research-index),
+  #root .site-title::after,
+  #root .site-nav__link::after,
+  #root .mobile-nav a::before {
+    transition: none;
+  }
+
+  #root .research-trigger:hover .research-index {
+    transform: none;
+  }
+
+  #root :is(.site-nav__dropdown, .mobile-nav) {
+    animation: none;
+  }
+}

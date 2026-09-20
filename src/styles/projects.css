@@ -1,0 +1,32 @@
+.samir-projects { padding: 69px 0 40px; background: #fff; color: #183c2d; font-family: Inter, Arial, sans-serif; }
+.samir-projects-banner { display: flex; align-items: flex-end; min-height: 330px; padding: 38px max(32px, calc((100vw - 1280px) / 2)); background: linear-gradient(90deg, rgba(3, 62, 43, .78), rgba(13, 107, 75, .28)), url('/projects-research.jpg') center 52% / cover; color: #fff; }
+.samir-projects-banner p { margin: 0 0 6px; font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #d8f3e4; }
+.samir-projects-banner h1 { margin: 0; color: #fff; font: 600 clamp(36px, 4vw, 54px)/1.15 Lora, Georgia, serif; letter-spacing: -.025em; }
+.samir-projects-content { width: min(100% - 40px, 1320px); margin: 0 auto; padding-top: 40px; }
+.samir-projects-intro { margin: 0 0 24px; color: #546e62; font-size: 16px; line-height: 1.7; }
+.samir-projects-list { display: grid; gap: 24px; }
+.samir-project-card { padding: 22px 20px; border: 1px solid #c8ded2; border-radius: 13px; box-shadow: 0 1px 5px #183c2d29; background: #fff; }
+.samir-project-card h2 { margin: 0 0 18px; font-size: 19px; font-weight: 600; line-height: 1.5; }
+.samir-project-meta { display: grid; gap: 12px; font-size: 16px; line-height: 1.6; color: #546e62; }
+.samir-project-meta p { display: flex; align-items: flex-start; gap: 11px; margin: 0; }
+.samir-project-meta svg { width: 18px; height: 20px; flex: 0 0 18px; color: #0d6b4b; margin-top: 3px; }
+.samir-project-meta small { display: block; font-size: 12px; color: #0d6b4b; font-weight: 500; }
+.samir-project-details { margin-top: 23px; padding-top: 18px; border-top: 1px solid #168a63; font-size: 15px; line-height: 1.8; color: #546e62; }
+.samir-project-details h3 { font-size: 14px; font-weight: 600; color: #0d6b4b; margin: 0 0 5px; }
+.samir-project-details p { margin: 0; }
+.samir-project-details p + h3 { margin-top: 16px; }
+.samir-project-contact { margin-top: 24px; padding: 26px; display: flex; justify-content: space-between; align-items: center; gap: 24px; border: 1px solid #c8ded2; border-radius: 13px; box-shadow: 0 1px 5px #183c2d20; }
+.samir-project-contact h2 { margin: 0 0 7px; font-size: 22px; font-weight: 600; }
+.samir-project-contact p { margin: 0; font-size: 15px; color: #546e62; }
+.samir-project-contact a { display: inline-flex; gap: 15px; align-items: center; justify-content: center; min-height: 44px; padding: 10px 23px; border-radius: 7px; color: #fff; background: #0d6b4b; text-decoration: none; font-size: 15px; font-weight: 600; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; }
+.samir-project-contact a:hover { background: #095b41; transform: translateY(-2px); box-shadow: 0 7px 16px rgba(24, 60, 45, .14); }
+.samir-project-contact a:active { transform: translateY(0); box-shadow: none; }
+.samir-project-contact a:focus-visible { outline: 3px solid #168a63; outline-offset: 4px; }
+@media (max-width: 680px) {
+  .samir-projects-content { width: calc(100% - 32px); padding-top: 28px; }
+  .samir-projects-banner { min-height: 240px; padding: 28px 22px; }
+  .samir-project-card { padding: 20px 17px; }
+  .samir-project-card h2 { font-size: 17px; }
+  .samir-project-meta, .samir-project-details { font-size: 14px; }
+  .samir-project-contact { align-items: stretch; flex-direction: column; padding: 22px; gap: 20px; }
+}

@@ -1,0 +1,41 @@
+.pwa-install,
+.pwa-notice button {
+  padding: 9px 16px;
+  min-height: 42px;
+  border: 1px solid #0d6b4b;
+  border-radius: 7px;
+  background: #0d6b4b;
+  color: #fff;
+  font: 600 14px/1.4 Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+.pwa-install { display: block; margin: 16px auto 0; }
+.pwa-notice {
+  position: fixed;
+  z-index: 110;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  width: min(360px, calc(100% - 32px));
+  padding: 18px;
+  border: 1px solid #c8ded2;
+  border-radius: 12px;
+  background: #fff;
+  color: #183c2d;
+  box-shadow: 0 8px 28px #183c2d26;
+  text-align: left;
+  font: 15px/1.5 Arial, sans-serif;
+}
+.pwa-notice p { margin: 0 0 14px; }
+.pwa-notice-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.pwa-notice .pwa-dismiss { background: #fff; color: #0d6b4b; }
+.pwa-notice button:disabled, .pwa-install:disabled { opacity: .65; cursor: wait; }
+@media (hover: hover) {
+  .pwa-install:enabled:hover, .pwa-notice button:enabled:hover {
+    background: #095b41;
+    box-shadow: 0 4px 12px #183c2d26;
+  }
+  .pwa-notice .pwa-dismiss:hover { background: #def3e8; }
+}
+.pwa-install:enabled:active, .pwa-notice button:enabled:active { box-shadow: none; }

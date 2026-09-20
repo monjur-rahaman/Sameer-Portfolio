@@ -1,0 +1,22 @@
+.samir-gallery .gallery-photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.samir-gallery .gallery-photo-card { margin: 0; padding: 0; overflow: hidden; }
+.gallery-photo-open { display: block; position: relative; width: 100%; padding: 0; border: 0; background: #edf8f1; cursor: zoom-in; }
+.gallery-photo-open > img { display: block; width: 100%; aspect-ratio: 1 / .78; object-fit: cover; object-position: 30% center; }
+.gallery-photo-open > span { position: absolute; right: 18px; bottom: 18px; display: flex; gap: 15px; padding: 10px 16px; border-radius: 7px; background: #0d6b4b; color: #fff; font-size: 14px; font-weight: 600; transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
+.gallery-photo-open:hover > span { background: #095b41; transform: translateY(-2px); box-shadow: 0 6px 14px rgba(3, 62, 43, .22); }
+.gallery-photo-caption { padding: 22px 20px; }
+.gallery-photo-open:focus-visible { outline: 3px solid #168a63; outline-offset: -4px; }
+.gallery-photo-dialog { position: fixed; inset: 0; margin: auto; width: min(1200px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 32px); padding: 0; border: 1px solid #c8ded2; border-radius: 13px; background: #fff; color: #183c2d; overflow: auto; }
+.gallery-photo-dialog::backdrop { background: rgba(6,24,35,.85); }
+.gallery-viewer-content { position: relative; padding: 54px 16px 16px; }
+.gallery-viewer-content > img { display: block; width: 100%; height: auto; max-height: calc(100dvh - 145px); object-fit: contain; }
+.gallery-viewer-content > p { margin: 12px 0 0; text-align: center; font-size: 14px; }
+.gallery-viewer-close { position: absolute; right: 10px; top: 7px; width: 40px; height: 40px; border: 1px solid #c8ded2; border-radius: 7px; color: #0d6b4b; background: #def3e8; font-size: 28px; cursor: pointer; transition: color .2s ease, background .2s ease, transform .2s ease; }
+.gallery-viewer-close:hover { color: #fff; background: #0d6b4b; transform: rotate(90deg); }
+.gallery-viewer-close:focus-visible { outline: 3px solid #168a63; outline-offset: 2px; }
+body:has(.gallery-photo-dialog[open]) { overflow: hidden; }
+@media (max-width: 680px) {
+  .samir-gallery .gallery-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .gallery-photo-caption { padding: 20px 17px; }
+  .gallery-photo-open > span { right: 10px; bottom: 10px; padding: 7px 10px; font-size: 12px; }
+}
