@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import '../styles/community-pages.css';
 import '../styles/gallery.css';
 
+
 export default function GalleryPage() {
   const viewer = useRef(null);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
